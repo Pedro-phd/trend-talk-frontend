@@ -1,7 +1,18 @@
-/* istanbul ignore file */
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/poppins-v15-latin-regular.eot');
+  src: local(''),
+       url('../fonts/poppins-v15-latin-regular.eot?#iefix') format('embedded-opentype'), 
+       url('../fonts/poppins-v15-latin-regular.woff2') format('woff2'), 
+       url('../fonts/poppins-v15-latin-regular.woff') format('woff'),
+       url('../fonts/poppins-v15-latin-regular.ttf') format('truetype'), 
+       url('../fonts/poppins-v15-latin-regular.svg#Poppins') format('svg'); 
+}
   * {
     margin: 0;
     padding: 0;
@@ -17,7 +28,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: ${(props) => props.theme.fonts.main};
   }
 `
 
